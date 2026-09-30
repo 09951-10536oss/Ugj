@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<title>เปิดตัวแก๊งเพื่อนของผม</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+header {
+  background-color: #4A90E2; /* เปลี่ยนสี Header เป็นสีน้ำเงินให้ดูเท่ขึ้น */
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+nav {
+  float: left;
+  width: 20%;
+  height: 350px; 
+  background: #f0f4f8;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin-bottom: 12px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  padding: 5px;
+}
+
+nav ul li a:hover {
+  color: #4A90E2;
+  background-color: #172fbb;
+  border-radius: 4px;
+}
+
+.content-wrapper {
+  float: left;
+  width: 80%;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 68.75%;
+  height: 350px; 
+  text-align: center;
+}
+
+aside {
+  float: left;
+  padding: 20px;
+  width: 31.25%;
+  height: 350px; 
+}
+
+/* เพิ่มโทนสีตามบุคลิกเพื่อน */
+#friend-box-1 article { background-color: #39c7aa; } /* กัส: โทนส้ม */
+#friend-box-1 aside { background-color: #ffe0cc; }
+
+#friend-box-2 article { background-color: #f4e6ff; } /* ทอง: โทนม่วง */
+#friend-box-2 aside { background-color: #eaccff; }
+
+#friend-box-3 article { background-color: #ffe6e6; } /* ธีรภัท: โทนแดง */
+#friend-box-3 aside { background-color: #ffcccc; }
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  color: hwb(0 3% 19%);
+}
+
+#friend-box-2, #friend-box-3 {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  nav, .content-wrapper, article, aside {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <h2>แก๊งเพื่อนของผม</h2>
+  </header>
+
+  <section>
+    
+    <nav>
+      <h3>รายชื่อเพื่อน</h3>
+      <ul>
+        <li><a onclick="showFriend(1)">ดา</a></li>
+        <li><a onclick="showFriend(2)">ดรีม</a></li>
+        <li><a onclick="showFriend(3)">น็อค</a></li>
+      </ul>
+    </nav>
+    
+    <div class="content-wrapper">
+      
+      <!-- ดา: โทนสีส้ม -->
+      <div id="friend-box-1">
+        <article>
+          <img src="ดา.jpg" alt="ดา" width="400" height="200" style="object-fit: cover;">
+          <h1>ดา</h1>
+          <p>เป็น ร.ด เป็นมวย เกรียนๆ </p>
+        </article>
+        <aside>
+          <h3>ข้อมูลเพิ่มเติม</h3>เป็นคนที่รักษาคำพูด และมีเหตุผลเสมอ เป็นคนที่จะพัฒนาไปในทางที่ดีเพราะใฝ่ดี นักวิง ,นักกล้าม อดีตเคยอ้วนตอนนี้ผอมแล้ว
+          <p><strong><span style='font-size:100px;'>&#129309;</span></strong><br>สายออกกำลังกายต่อยมวย ฮาๆ เกรียนๆ</p>
+        </aside>
+      </div>
+
+      <!-- ดรีม: โทนสีม่วง -->
+      <div id="friend-box-2">
+        <article>
+         <img src="ดรีม.jpg" alt="ดรีม" width="400" height="200" style="object-fit: cover;">
+          <h1>ดรีม</h1>
+          <p>เป็นคนชอบหมก ตัวสูงโยกเยก ฮาๆ เกรียนๆ</p>
+        </article>
+        <aside>
+          <h3>ข้อมูลเพิ่มเติม</h3>ตอนมัทธยมต้นชอบใส่แมสค์มาก ตอนนี้เลิกใส่แล้ว เป็นที่น่าคุยด้วยคุยสนุก ชอบเล่นเกม หุ่นหมี
+          <p><strong><span style='font-size:100px;'>&#127794;</span></strong><br>สายหมกตัวเพิ่มความฮา</p>
+        </aside>
+      </div>
+
+      <!-- เต้: โทนสีแดง -->
+      <div id="friend-box-3">
+        <article>
+           <img src="น็อค.jpg" alt="น็อค" width="400" height="200" style="object-fit: cover;">
+          <h1>น็อค</h1>
+          <p>เป็นคนฮาๆ ชอบฮาคำพูดเกรียนๆตลกๆมาพูด</p>
+        </article>
+        <aside>
+          <h3>ข้อมูลเพิ่มเติม</h3>เป็นนักกีแตะบอล สายออกกำลัง ต่อนมวย นักมายไทย
+          <p><strong><span style='font-size:100px;'>&#129322;</span></strong><br>ตัวฮาระดับเทพ</p>
+        </aside>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    <p>My Friends &copy; 2026</p>
+  </footer>
+
+  <script>
+    function showFriend(friendNumber) {
+      document.getElementById('friend-box-1').style.display = 'none';
+      document.getElementById('friend-box-2').style.display = 'none';
+      document.getElementById('friend-box-3').style.display = 'none';
+      
+      document.getElementById('friend-box-' + friendNumber).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
